@@ -9,5 +9,4 @@ public class Solution {
         }
         Arrays.sort(nums1);
     }
-
 }
