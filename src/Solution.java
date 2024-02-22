@@ -1,12 +1,14 @@
-package src;
 
-import java.util.*;
 
 public class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
-        for (int j = 0, i = m; j < n; j++) {
-            nums1[i++] = nums2[j];
+    public int removeElement(int[] nums, int val) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[index] = nums[i];
+                index++;
+            }
         }
-        Arrays.sort(nums1);
+        return index;
     }
 }
