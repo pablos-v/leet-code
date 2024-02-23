@@ -1,12 +1,13 @@
 
 
-public class Solution {
-    public int removeElement(int[] nums, int val) {
-        int index = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != val) {
-                nums[index] = nums[i];
-                index++;
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int etalon = nums[0];
+        int index = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != etalon) {
+                nums[index++] = nums[i];
+                etalon = nums[i];
             }
         }
         return index;
