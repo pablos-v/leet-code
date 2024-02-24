@@ -7,22 +7,33 @@ class SolutionTest {
 
     @Test
     void removeDuplicates() {
-        int[] arr = {1,1,2};
-        int expected = 2;
-        int res;
-
-        res = s.removeDuplicates(arr);
-
-        Assertions.assertEquals(expected, res);
-    }
-    @Test
-    void removeDuplicates2() {
-        int[] arr = {0,0,1,1,1,2,2,3,3,4};
+        int[] arr = {1, 1, 1, 2, 2, 3};
         int expected = 5;
         int res;
+        int[] expArr = {1, 1, 2, 2, 3};
 
         res = s.removeDuplicates(arr);
 
         Assertions.assertEquals(expected, res);
+        for (int i = 0; i < expected; i++) {
+            Assertions.assertEquals(expArr[i], arr[i]);
+
+        }
+    }
+
+    @Test
+    void removeDuplicates2() {
+        int[] arr = {0, 0, 1, 1, 1, 1, 2, 3, 3};
+        int expected = 7;
+        int res;
+        int[] expArr = {0, 0, 1, 1, 2, 3, 3};
+
+        res = s.removeDuplicates(arr);
+
+        Assertions.assertEquals(expected, res);
+        for (int i = 0; i < expected; i++) {
+            Assertions.assertEquals(expArr[i], arr[i]);
+
+        }
     }
 }
