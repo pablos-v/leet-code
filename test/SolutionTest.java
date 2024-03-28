@@ -10,7 +10,7 @@ class SolutionTest {
         int[] arr = {7, 1, 5, 3, 6, 4};
 
         int res = s.maxProfit(arr);
-        int expected = 5;
+        int expected = 7;
         System.out.println(res);
 
         assert (res == expected);
