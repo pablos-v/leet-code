@@ -1,16 +1,18 @@
 
 import org.junit.jupiter.api.Test;
 
+
 class SolutionTest {
     Solution s = new Solution();
 
     @Test
     void majorityElement() {
-        int[] arr = {3,2,3};
-        int exp = 3;
+        int[] arr = {7, 1, 5, 3, 6, 4};
 
-        int res = s.majorityElement(arr);
+        int res = s.maxProfit(arr);
+        int expected = 5;
+        System.out.println(res);
 
-        assert (exp==res);
+        assert (res == expected);
     }
 }
