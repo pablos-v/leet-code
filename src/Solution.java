@@ -2,21 +2,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
- * On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the
- * stock at any time. However, you can buy it then immediately sell it on the same day.
- * Find and return the maximum profit you can achieve.
+ * You are given an integer array nums. You are initially positioned at the array's
+ * first index, and each element in the array represents your maximum jump length at that position.
+ * <p>
+ * Return true if you can reach the last index, or false otherwise.
  */
 class Solution {
-    public int maxProfit(int[] prices) {
-        int startPoint = 0;
-        int profit = 0;
+    public boolean canJump(int[] nums) {
+        int last = nums.length - 1;
+        if (last == 0) return true;
+        int maxMove = 0;
+        int move;
 
-        for (int current = 1; current < prices.length; current++) {
-            if (prices[current] > prices[startPoint]) profit += prices[current] - prices[startPoint];
-            startPoint = current;
+        for (int i = 0; i < last; i++) {
+            if (maxMove <= i && nums[i] == 0) return false;
+            move = nums[i] + i;
+            if (move >= last) return true;
+            maxMove = Math.max(move, maxMove);
         }
-
-        return profit;
+        return false;
     }
 }

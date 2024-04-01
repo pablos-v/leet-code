@@ -1,18 +1,33 @@
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 
 class SolutionTest {
     Solution s = new Solution();
 
     @Test
-    void majorityElement() {
-        int[] arr = {7, 1, 5, 3, 6, 4};
+    void testForArr1() {
+        int[] arr = {3, 2, 1, 0, 4};
+        boolean result = s.canJump(arr);
 
-        int res = s.maxProfit(arr);
-        int expected = 7;
-        System.out.println(res);
-
-        assert (res == expected);
+        assert !result;
     }
+    @Test
+    void testForArr2() {
+        int[] arr = {0, 4, 1};
+        boolean result = s.canJump(arr);
+
+        assert !result;
+    }
+    @Test
+    void testForArr3() {
+        int[] arr = {2,3,1,1,4};
+        boolean result = s.canJump(arr);
+
+        assert result;
+    }
+
+
 }
